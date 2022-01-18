@@ -4,5 +4,6 @@ class Product < ApplicationRecord
 
   validates :name, presence: true
   validates :UPC, presence: true
+  validates_uniqueness_of :UPC
   validates :quantity, presence: true
 end
