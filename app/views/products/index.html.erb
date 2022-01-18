@@ -1,0 +1,38 @@
+<%- title "Products" %>
+<div class="card border-light">
+  <div class="table-responsive">
+    <table class="table align-middle mb-0  table-borderless">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">UPC</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Warehouses</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="border-light">
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.id %></td>
+            <td><%= link_to product.name, product %></td>
+            <td><%= product.UPC %></td>
+            <td><%= product.quantity %></td>
+            <td><% product.warehouses[0...3].each do |w| %>
+                <%= link_to w.name, w, class:"badge bg-secondary rounded-pill text-decoration-none" %>
+              <% end %>
+              <% if product.warehouses.count > 3 %>
+                <span class="badge bg-primary rounded-pill">+ <%= product.warehouses.count - 3  %></span>
+              <% end %>
+            </td>
+            <td><%= link_to render(Primer::OcticonComponent.new(:"pencil")), edit_product_path(product) %> <%= link_to render(Primer::OcticonComponent.new(:"x")), product_path(product), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure you want to delete this item?"
+                } %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

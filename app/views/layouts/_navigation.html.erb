@@ -1,0 +1,25 @@
+<nav class="navbar navbar-vertical navbar-light bg-light">
+  <div class="navbar-header mt-4"><%= image_tag("logo.png") %></div>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <%= link_to :root, class:"nav-link" do %> <%= image_tag("home.svg") %>
+        Dashboard <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to products_url, class:"nav-link" do %> <%=
+      image_tag("products.svg") %> Products <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to new_product_url, class:"nav-link" do %> <%=
+      image_tag("add.svg") %> Add Product <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to warehouses_url, class:"nav-link" do %> <%=
+      image_tag("warehouse.svg") %> Warehouses <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to new_warehouse_url, class:"nav-link" do %> <%=
+      image_tag("add.svg") %> Add Warehouse <% end %>
+    </li>
+  </ul>
+</nav>

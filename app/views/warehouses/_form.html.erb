@@ -1,0 +1,70 @@
+<div class="form-container bg-light rounded p-4">
+  <%= form_with model: warehouse, html: {class: "row g-3"} do |form| %>
+    <div class="col-sm-12">
+      <div class="form-floating">
+        <%= form.text_field :name, {class:"form-control", id:"w_name"} %>
+        <%= form.label :name, {class:"form-label", for:"w_name"} %>
+      </div>
+      <% @warehouse.errors.full_messages_for(:name).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-floating">
+        <%= form.text_field :address_1, {class:"form-control", id:"w_addr"} %>
+        <%= form.label :address_1, "Street address", {class:"form-label", for:"w_addr"} %>
+      </div>
+      <% @warehouse.errors.full_messages_for(:address_1).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-floating">
+        <%= form.text_field :address_2, {class:"form-control", id:"w_addr2"} %>
+        <%= form.label :address_2, "Street address 2", {class:"form-label", for:"w_addr2"} %>
+      </div>
+      <% @warehouse.errors.full_messages_for(:address_2).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-floating">
+        <%= form.country_select :country, { include_blank: true }, { class:"form-select", id:"w_country"} %>
+        <%= form.label :country, {class:"form-label", for:"w_country"} %>
+      </div>
+      <% @warehouse.errors.full_messages_for(:country).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-floating">
+        <%= form.text_field :city, {class:"form-control", id:"w_city"} %>
+        <%= form.label :city, {class:"form-label", for:"w_city"} %>
+      </div>
+      <% @warehouse.errors.full_messages_for(:city).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-floating">
+        <%= form.text_field :state_province, {class:"form-control", id:"w_state"} %>
+        <%= form.label :state_province, "State / Province", {class:"form-label", for:"w_state"} %>
+      </div>
+      <% @warehouse.errors.full_messages_for(:state_province).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-floating">
+        <%= form.text_field :zip_postal, {class:"form-control", id:"w_zip"} %>
+        <%= form.label :zip_postal, "ZIP / Postal Code", {class:"form-label", for:"w_zip"} %>
+      </div>
+      <% @warehouse.errors.full_messages_for(:zip_postal).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-auto ms-auto">
+      <%= form.submit class:"btn btn-primary text-white" %>
+    </div>
+  <% end %>
+</div>

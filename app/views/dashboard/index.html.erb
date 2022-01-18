@@ -1,0 +1,51 @@
+<%- title "Dashboard" %>
+<p>Welcome to the Inventory Tracker dashboard.</p>
+<div class="row py-2">
+  <h4 class="my-3">Recent Products</h4>
+  <% if Product.count > 0 %> <% Product.order("id desc")[0...3].each do |p| %>
+      <div class="col-sm-4">
+        <div class="card text-center bg-light border-0">
+          <p class="card-header show-label p-3 border-0"><%= p.name %></p>
+          <div class="card-body">
+            <p class="card-text">UPC: <%= p.UPC %></p>
+            <p class="card-text">QTY: <%= p.quantity %></p>
+            <%= link_to "View", p, class:"btn btn-secondary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %> <% else %> There are no products in the database. <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-auto ms-auto">
+      <%= link_to products_url, class:"text-decoration-none" do %> View all
+        products <%= render(Primer::OcticonComponent.new(:"arrow-right")) %> <%
+      end %>
+      </div>
+    </div>
+  </div>
+  <div class="row py-2">
+    <h4 class="my-3">Recent Warehouses</h4>
+    <% if Warehouse.count > 0 %> <% Warehouse.order("id desc")[0...3].each do |w|
+  %>
+      <div class="col-sm-4">
+        <div class="card text-center bg-light border-0">
+          <p class="card-header show-label p-3 border-0"><%= w.name %></p>
+          <div class="card-body">
+            <p class="card-text"><%= w.address_1 %></p>
+            <p class="card-text"><%= w.country_name %></p>
+            <%= link_to "View", w, class:"btn btn-secondary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %> <% else %> There are no warehouses in the database. <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-auto ms-auto">
+      <%= link_to warehouses_url, class:"text-decoration-none" do %> View all
+        warehouses <%= render(Primer::OcticonComponent.new(:"arrow-right")) %> <%
+      end %>
+      </div>
+    </div>
+  </div>

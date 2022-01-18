@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? "Inventory Tracker | #{content_for(:title)}" : "Inventory Tracker" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%= render "layouts/navigation" %>
+      <div class="main-content">
+        <div class="header container">
+          <div class="row h-100">
+            <div class="col my-auto">
+              <h1 class="h5 mb-0 mt-2 text-primary">Inventory Tracker</h1>
+            </div>
+          </div>
+        </div>
+        <hr class="my-3" />
+        <div class="container pb-5 px-4">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="text-secondary h2"><%= content_for?(:title) ? content_for(:title) : "Inventory Tracker" %></h1>
+            </div>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+    </body>
+  </html>

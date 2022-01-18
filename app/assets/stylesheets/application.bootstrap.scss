@@ -1,0 +1,114 @@
+table th {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.table > :not(:first-child) {
+  border-top: 1px !important;
+}
+
+.table {
+  border-bottom: 0px !important;
+}
+
+table a {
+  text-decoration: none;
+}
+
+.btn {
+  text-transform: uppercase;
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
+}
+
+.btn-primary,
+.btn-secondary {
+  color: #fff !important;
+}
+.main-content {
+  position: relative;
+  padding: 0 1rem;
+}
+
+.header {
+  position: relative;
+  text-align: right;
+  height: 100px;
+}
+
+.navbar.navbar-vertical {
+  min-width: 250px;
+  max-width: 250px;
+  position: fixed;
+  height: 100%;
+  display: block;
+  align-items: center;
+  z-index: 1050;
+  padding: 0 1rem;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  left: 0;
+}
+.navbar-vertical + .main-content {
+  margin-left: 250px;
+}
+
+.navbar-vertical img {
+  max-width: 100%;
+  max-height: 90px;
+}
+
+.nav-item a > img {
+  padding: 5px 10px;
+  margin-bottom: 2px;
+}
+
+.navbar-vertical .navbar-nav {
+  flex-direction: column;
+}
+
+.navbar-nav > .nav-item {
+  margin: 10px 0;
+  height: auto;
+}
+
+.navbar-vertical .navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.navbar-vertical .navbar-nav > .nav-item > .nav-link {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  background: #fff;
+}
+
+.navbar-header {
+  height: 100px;
+  text-align: center;
+}
+
+.form-container {
+  max-width: 750px;
+}
+
+.show-label {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.accordion-label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+$primary: #fe7e6d;
+$secondary: #2f3a8f;
+$dark: #4b6587;
+$light: #f6f4f5;
+$body-bg: #fff;
+
+@import "bootstrap/scss/bootstrap";

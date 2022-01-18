@@ -1,0 +1,58 @@
+<div class="form-container bg-light rounded p-4">
+  <%= form_with model: product, html: {class: "row g-3"} do |form| %>
+    <div class="col-sm-12">
+      <div class="form-floating">
+        <%= form.text_field :name, {class:"form-control", id:"p_name"} %>
+        <%= form.label :name, {class:"form-label", for:"p_name"} %>
+      </div>
+      <% @product.errors.full_messages_for(:name).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-floating">
+        <%= form.text_field :UPC, {class:"form-control", id:"p_upc"} %>
+        <%= form.label :UPC, "UPC", {class:"form-label", for:"p_upc"} %>
+      </div>
+      <% @product.errors.full_messages_for(:UPC).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-floating">
+        <%= form.number_field :quantity, {class:"form-control", id:"p_quantity"} %>
+        <%= form.label :quantity, {class:"form-label", for:"p_quantity"} %>
+      </div>
+      <% @product.errors.full_messages_for(:quantity).each do |message| %>
+        <div class="p-2 text-danger"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-floating">
+        <%= form.text_area :description, {class:"form-control", id:"p_description", rows:"3"} %>
+        <%= form.label :description, {class:"form-label", for:"p_description"} %>
+      </div>
+    </div>
+    <div class="accordion col-sm-12" id="warehouses-accordion">
+      <div class="accordion-item">
+        <button class="ps-0 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#warehouses-collapse" aria-expanded="false" aria-controls="warehouses-collapse">
+          <span class="accordion-label">Warehouse(s)</span>
+        </button>
+        <div id="warehouses-collapse" class="accordion-collapse collapse" data-bs-parent="#warehouses-accordion">
+          <div class="accordion-body">
+            <div class="form-check">
+              <%= form.collection_check_boxes(:warehouse_ids, Warehouse.order(:name), :id, :name) do |b| %>
+                <%= b.label class:"form-check-label" do %>
+                  <%= b.check_box(class:"form-check-input") + b.text %>
+                <% end %> <br>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto ms-auto">
+      <%= form.submit class:"btn btn-primary text-white" %>
+    </div>
+  <% end %>
+</div>
