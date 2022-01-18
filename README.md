@@ -1,9 +1,10 @@
 # Inventory Tracker 
 
-An inventory tracking system built with Ruby on rails 7.0.1. This is part of the Shopify Backend Developer Intern Challenge - Summer 2022.
+An inventory tracking system built with Ruby on Rails 7.0.1. This is part of the **Shopify Backend Developer Intern Challenge - Summer 2022**.
 
-##### Additional feature:
-- Ability to create warehouses/locations and assign inventory to specific locations
+**Additional feature chosen:** Ability to create warehouses/locations and assign inventory to specific locations.
+
+## Installation
 
 ### Prerequisites
 - Ruby (v2.7.0)+
@@ -12,21 +13,19 @@ An inventory tracking system built with Ruby on rails 7.0.1. This is part of the
 - Yarn
 - Rails (v7.0.0)+
 
-## Installation
-
 ### Clone the repository
 
 ```shell
 git clone git@github.com:kim-le/inventory-tracker.git
-cd inventory-tracker
 ```
+Navigate into the directory with `cd inventory-tracker` to proceed.
 
 ### Check dependencies
 
 ```shell
 ruby --version
 ```
-If your version of Ruby is earlier than 3.0.0, visit [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/) to update/install. 
+If you do not have Ruby installed or your version of Ruby is earlier than 3.0.0, visit [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/) to update/install. 
 
 ```shell
 sqlite3 --version
@@ -46,16 +45,14 @@ Verify that your shell returns a version. If your system does not have Yarn inst
 ```shell
 rails --version
 ```
-If your version of Rails is earlier than 7.0.0, run the following command to install:
-```shell
-gem install rails
-```
+This application requires Rails 7.0.0 or later. If you do not have Rails installed, run `gem install rails`. To upgrade your version of Rails, visit the [Ruby on Rails guides](https://guides.rubyonrails.org/upgrading_ruby_on_rails.html#the-upgrade-process).
+
 Once all the dependencies are verified, run:
 ```shell
 bundle && yarn
 ```
 ### Setting up the database
-The follow command will initialize a new database for you:
+The follow command will initialize a new database:
 ```shell
 bin/rails db:create db:migrate
 ```
