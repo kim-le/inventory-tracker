@@ -16,7 +16,7 @@ An inventory tracking system built with Ruby on Rails 7.0.1. This is part of the
 ### Clone the repository
 
 ```shell
-git clone git@github.com:kim-le/inventory-tracker.git
+git clone https://github.com/kim-le/inventory-tracker.git
 ```
 Navigate into the directory with `cd inventory-tracker` to proceed.
 
